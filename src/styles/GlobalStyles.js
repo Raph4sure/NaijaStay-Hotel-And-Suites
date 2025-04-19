@@ -1,21 +1,9 @@
+import { createGlobalStyle } from "styled-components";
 
-/* <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-  rel="stylesheet"
-/>
-<link
-  href="https://fonts.googleapis.com/css2?family=Sono:wght@400;500;600&display=swap"
-  rel="stylesheet"
-/>
-*/
-
-/* Colors adapted from https://tailwindcss.com/docs/customizing-colors */
-
+const GlobalStyles = createGlobalStyle`
 
 :root {
-  /* Indigo */
+  /* Indigo
   --color-brand-50: #eef2ff;
   --color-brand-100: #e0e7ff;
   --color-brand-200: #c7d2fe;
@@ -51,7 +39,7 @@
 
   --color-red-100: #fee2e2;
   --color-red-700: #b91c1c;
-  --color-red-800: #991b1b;
+  --color-red-800: #991b1b; 
 
   --backdrop-color: rgba(255, 255, 255, 0.1);
 
@@ -117,7 +105,7 @@ input:disabled {
 }
 
 input:focus,
-button:focus,
+button:focus,background
 textarea:focus,
 select:focus {
   outline: 2px solid var(--color-brand-600);
@@ -156,8 +144,8 @@ img {
   filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
 }
 
-/*
-FOR DARK MODE
+
+/* FOR DARK MODE */
 
 --color-grey-0: #18212f;
 --color-grey-50: #111827;
@@ -194,4 +182,6 @@ FOR DARK MODE
 
 --image-grayscale: 10%;
 --image-opacity: 90%;
+`;
 
+export default GlobalStyles;
