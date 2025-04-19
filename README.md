@@ -1,1 +1,1 @@
-# NaijaStay-Hotel---Suites
+# NaijaStay-Hotel-And-Suites
