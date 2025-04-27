@@ -5,6 +5,7 @@ import { useSearchParams } from "react-router-dom";
 export function useBookings() {
     const [searchParams] = useSearchParams();
     const filterValue = searchParams.get("status");
+    const queryClient = useQueryClient();
 
     // FILTER
     const filter =
@@ -33,8 +34,20 @@ export function useBookings() {
         queryFn: () => getBookings({ filter, sortBy, page }),
     });
 
+    // PRE-FETCHING
+    const pageCount = Math.ceil(count / PAGE_SIZE);
 
-    //
+    if (page < pageCount)
+        queryClient.prefetchQuery({
+            queryKey: ["bookings", filter, sortBy, page + 1],
+            queryFn: () => getBookings({ filter, sortBy, page: page + 1 }),
+        });
+
+    if (page > 1)
+        queryClient.prefetchQuery({
+            queryKey: ["bookings", filter, sortBy, page - 1],
+            queryFn: () => getBookings({ filter, sortBy, page: page - 1 }),
+        });
 
     return { isLoading, bookings, error, count };
 }
