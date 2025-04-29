@@ -18,7 +18,7 @@ function DashboardLayout() {
 
     const {
         isLoading: isLoading2,
-        stays,
+        // stays,
         confirmStays,
         numDays,
     } = useRecentStays();
