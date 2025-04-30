@@ -11,7 +11,7 @@ import {
     YAxis,
 } from "recharts";
 import { useDarkMode } from "../../context/DarkModeContext";
-import { bookings } from "../../data/data-bookings";
+// import { bookings } from "../../data/data-bookings";
 import { eachDayOfInterval, format, isSameDay, subDays } from "date-fns";
 
 const StyledSalesChart = styled(DashboardBox)`
